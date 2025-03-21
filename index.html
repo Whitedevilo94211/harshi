@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neurodegenerative Disease</title>
+  <link rel="icon" type="image/png" href="p1.jpg" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #3498db;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .main-container {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .left-column, .right-column {
+      width: 20%;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .center-column {
+      width: 60%;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .tools-menu h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .tools-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tools-menu li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tools-menu button {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .alz-info {
+      margin-bottom: 1rem;
+    }
+
+    .search-section {
+      margin-bottom: 1rem;
+    }
+
+    .search-section label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .search-section input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      margin-bottom: 0.5rem;
+    }
+
+    .search-section button {
+      padding: 0.5rem 1rem;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .image-card {
+      margin-bottom: 1rem;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .dynamic-content{
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Creation of a Brain MRI Database for Neurodegenerative Disease Progression</h1>
+  </header>
+
+  <main class="main-container">
+    <aside class="left-column">
+      <nav class="tools-menu">
+        <h2>Tools</h2>
+        <ul>
+          <li><button id="blastMenuBtn">BLAST</button></li>
+          <li><button id="keggMenuBtn">KEGG</button></li>
+          <li><button id="primerMenuBtn">Primer Designing Tool</button></li>
+          <li><button id="translateMenuBtn">Transcription & Translation Tool</button></li>
+          <li><button id="complementMenuBtn">Complementary Tool</button></li>
+          <li><button id="uniprotMenuBtn">UniProt</button></li>
+          <li><button id="chemblMenuBtn">ChEMBL</button></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <section class="center-column">
+      <div class="alz-info">
+        <h2>Neurodegenerative Disease Progression</h2>
+        <p>
+          Neurodegenerative disease progression is characterized by the gradual decline in the function and survival of neurons, leading to devastating effects on both mental and physical health. This process typically involves the accumulation of abnormal proteins within the brain, such as amyloid plaques in Alzheimer's or Lewy bodies in Parkinson's, which interfere with cellular operations.
+        </p>
+        <p>
+          This database provides critical information on Neurodegenerative Disease Progression, including key genes and proteins involved, post-translational modifications (PTMs), cellular localization of proteins, and 3D structures.
+        </p>
+        <div class="more-info-link">
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6125655/" target="_blank">
+            Click this link to know more about Neurodegenerative Disease Progression
+          </a>
+        </div>
+      </div>
+
+      <div class="search-section">
+        <label for="studen_id">Search studen_id/dataset/diagnosis/file_path_y:</label>
+        <input type="text" id="studen_id" placeholder="Enter search term" />
+        <button id="searchButton">Search</button>
+      </div>
+
+      <div id="dynamicContent" class="dynamic-content"></div>
+    </section>
+
+    <aside class="right-column">
+      <div class="image-card">
+        <img src="crc_3 (1).jpg" alt="Neurodegenerative Disease" />
+      </div>
+      <div class="image-card">
+        <img src="crc_1.png" alt="Neurodegeneration Illustration" />
+      </div>
+      <div class="image-card">
+        <img src="crc_2.png" alt="Brain Model of Neurodegenerative " />
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Neurodegenerative Disease Progression. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('searchButton').addEventListener('click', function() {
+      const searchTerm = document.getElementById('studen_id').value;
+      document.getElementById('dynamicContent').textContent = `Searching for: ${searchTerm}`;
+      // Here you would add the code that handles your search logic
+    });
+
+    // Add event listeners for the tool buttons here.
+    document.getElementById('blastMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "BLAST Tool Selected";
+    });
+
+    document.getElementById('keggMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "KEGG Tool Selected";
+    });
+
+    document.getElementById('primerMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "Primer Tool Selected";
+    });
+
+    document.getElementById('translateMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "Translate Tool Selected";
+    });
+
+    document.getElementById('complementMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "Complement Tool Selected";
+    });
+
+    document.getElementById('uniprotMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "Uniprot Tool Selected";
+    });
+
+    document.getElementById('chemblMenuBtn').addEventListener('click', function() {
+      document.getElementById('dynamicContent').textContent = "Chembl Tool Selected";
+    });
+
+  </script>
+</body>
+</html>
