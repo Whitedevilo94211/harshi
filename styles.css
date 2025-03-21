@@ -1,0 +1,232 @@
+/* Define CSS variables */
+:root {
+  --heading-bg: #72A0C1; /* Preferred heading background color */
+  --link-color-1: #72A0C1;
+  --link-color-2: #5a8abf;
+  --input-border: #ccc;
+  --table-border: #ddd;
+  --table-header-bg: #72A0C1;
+  --table-header-color: #fff;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Uniform Heading Background for h1, h2, etc. */
+h1, h2, h3, h4, h5, h6 {
+  background-color: var(--heading-bg);
+  color: #fff;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Main Container with 3 columns */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Left:1, Center:2, Right:1 ratio */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Left Column: Tools Menu */
+.left-column {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.tools-menu h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.tools-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tools-menu li {
+  margin-bottom: 10px;
+}
+
+.tools-menu button {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--heading-bg);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.tools-menu button:hover {
+  background-color: var(--link-color-2);
+}
+
+/* Center Column: Info + Search */
+.center-column {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.alz-info h2 {
+  margin-top: 0;
+}
+
+/* More info link styling */
+.more-info-link {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.more-info-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px; /* Curved corners */
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--link-color-1);
+  animation: blink 2s infinite;
+}
+
+/* Blinking Animation for the link */
+@keyframes blink {
+  0%, 100% {
+    background-color: var(--link-color-1);
+  }
+  50% {
+    background-color: var(--link-color-2);
+  }
+}
+
+/* Search Section Styling */
+.search-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-section label {
+  flex-basis: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.search-section input {
+  flex: 1 1 300px;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-section input:focus {
+  outline: none;
+  border-color: var(--heading-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.search-section button {
+  padding: 10px 16px;
+  background-color: var(--heading-bg);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-section button:hover {
+  background-color: var(--link-color-2);
+}
+
+/* Dynamic content area (Search Results) */
+.dynamic-content {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  min-height: 200px;
+  border-radius: 8px;
+}
+
+/* Styled Table for Search Results */
+.dynamic-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.dynamic-content th,
+.dynamic-content td {
+  border: 1px solid var(--table-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.dynamic-content th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-color);
+}
+
+/* Right Column: Images */
+.right-column {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--heading-bg);
+  color: #fff;
+}
+
+/* Button Blink Effect on Click */
+.tools-menu button:active,
+.search-section button:active {
+  animation: blink-on-click 0.5s infinite;
+}
+
+/* Blinking Animation for Click */
+@keyframes blink-on-click {
+  0%, 100% {
+    background-color: var(--link-color-1);
+  }
+  50% {
+    background-color: var(--link-color-2);
+  }
+}
